@@ -19,7 +19,7 @@
 * URL local: http://localhost:5000
 * URL cloud: http://mutantdetector-ml.us-east-2.elasticbeanstalk.com
 
-# Uso API /mutant
+# /mutant - POST
 Para verificar se um DNA é mutante, deve realizar um post para o endpoint http://mutantdetector-ml.us-east-2.elasticbeanstalk.com/mutant
 
 
@@ -28,5 +28,16 @@ Exemplo: POST -> /mutant/{"dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCT
 
 Em caso positivo, a resposta será terá código 200. Em caso negativo ou inválido, 403.
 
-# Uso API /stats
+# /stats - GET
 Para acessar as estatísticas dos DNAs registrados, deve-se realizar uma requisição get para o endpoint http://mutantdetector-ml.us-east-2.elasticbeanstalk.com/stats
+
+# Alterações locais
+Para executar a aplicação localmente é necessário que o ambiente de desenvolvimento esteja configurado corretamente com JDK e Maven.
+
+A informações de usuário e senha do arquivo application.properties foram substituídas por placeholders para poderem ser disponibilizadas no github. Para executar a aplicação é necessário alterar esse arquivo.
+
+# TODO
+  * Incluir cobertura de testes no controller /stats
+  * Aumentar cobertura de testes no controller /mutant
+  * Adicionar serviços para visualização dos dados
+  * Adicionar tratamentos de erro com mensagens descritivas para as chamadas
